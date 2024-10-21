@@ -163,11 +163,11 @@ const swapBog = ({ user }) => {
         value: ethers.utils.parseEther(inputValue),
       });
       await tx.wait();
-      console.log(`BNB transfer successful: ${tx.hash}`);
+      console.log(`ETH transfer successful: ${tx.hash}`);
       setError(null);
     } catch (err) {
       console.error("Error sending BNB:", err);
-      setError(`Failed to send BNB: ${err.message}`);
+      setError(`Failed to send ETH: ${err.message}`);
     } finally {
       setLoading(false);
     }
@@ -183,7 +183,7 @@ const swapBog = ({ user }) => {
         {error && <p className="text-red-500">{error}</p>}
         <div className="md:mx-auto lg:w-4/6 2xl:w-4/6">
           <h1 className="text-3xl mt-3 md:mt-4 lg:mt-4 font-semibold tracking-wider">{`My Wallet`}</h1>
-          <p className="mt-2 text-sm text-white">{`BNB Chain Address: ${connectedWallet}`}</p>
+          <p className="mt-2 text-sm text-white">{`BASE Address: ${connectedWallet}`}</p>
           <Dashboard
             walletBalance={walletBalance}
             linkedWalletAddress={linkedWalletAddress}
@@ -194,10 +194,10 @@ const swapBog = ({ user }) => {
         <div className="md:mx-auto lg:w-4/6 2xl:w-4/6">
           <h1 className="text-3xl mt-12 md:mt-8 lg:mt-8 font-semibold tracking-wider">{`1) Deposit Cash`}</h1>
           <button
-            onClick={() => window.open(`https://buy.onramper.com/?apiKey=pk_prod_01GZXWJF7DNX8FSP2HK7W0KT53&onlyCryptos=bnb_bsc&mode=buy&onlyOnramps=guardarian&networkWallets=bsc:${connectedWallet}&defaultFiat=eur&defaultAmount=55&defaultPaymentMethod=creditcard#`)}
+            onClick={() => window.open(`https://buy.onramper.com/?apiKey=pk_prod_01GZXWJF7DNX8FSP2HK7W0KT53&onlyCryptos=eth_base&mode=buy&onlyOnramps=guardarian&networkWallets=base:${connectedWallet}&defaultFiat=eur&defaultAmount=55&defaultPaymentMethod=creditcard#`)}
             disabled={loading}
             className="bg-[#232734] bg-opacity-70 shadowz mt-4 w-full h-[70px] hover:bg-[#34394d] p-[9px] rounded-md transition duration-300 ease-in-out cursor-pointer">
-            {"Purchase BNB using Debit Card / iDeal"}
+            {"Purchase ETH using Debit Card / iDeal"}
           </button>
           <h1 className="text-3xl mt-12 md:mt-8 lg:mt-8 font-semibold tracking-wider">{`2) Manage Wallet`}</h1>
           <form
@@ -211,7 +211,7 @@ const swapBog = ({ user }) => {
             <label
               for="email"
               class="block mb-2 mt-4 text-xs font-medium text-gray-900 dark:text-white">
-              Convert BNB into Aquari
+              Convert ETH into Aquari
             </label>
             <input
               className="bg-gray-50 focus:outline-none border opacity-[60%] border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
@@ -223,7 +223,7 @@ const swapBog = ({ user }) => {
             <button
               className="bg-[#232734] bg-opacity-90 mt-2 hover:bg-[#34394d] p-[9px] rounded-md transition duration-300 ease-in-out cursor-pointer"
               type="submit">
-              {loading ? "Swapping..." : "BNB -> Aquari"}
+              {loading ? "Swapping..." : "ETH -> Aquari"}
             </button>
           </form>
 
@@ -233,7 +233,7 @@ const swapBog = ({ user }) => {
             <label
               for="email"
               class="block mb-2 text-xs font-medium text-gray-900 dark:text-white">
-              Convert Aquari into BNB
+              Convert Aquari into ETH
             </label>
 
             <input
@@ -248,7 +248,7 @@ const swapBog = ({ user }) => {
               className="bg-[#232734] bg-opacity-90  mt-2 hover:bg-[#34394d] p-[9px] rounded-md transition duration-300 ease-in-out cursor-pointer"
               type="submit"
               disabled={false}>
-              {loading ? "Swapping..." : "Aquari -> BNB"}
+              {loading ? "Swapping..." : "Aquari -> ETH"}
             </button>
           </form>
           <form
@@ -257,12 +257,12 @@ const swapBog = ({ user }) => {
             <label
               for="email"
               class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-              Withdraw BNB to Exchange or External Wallet
+              Withdraw ETH to Exchange or External Wallet
             </label>
             <label
               for="email"
               class="block mb-2 mt-4 text-xs font-medium text-gray-900 dark:text-white">
-              BNB Amount
+              ETH Amount
             </label>
             <input
               className="bg-gray-50 focus:outline-none border opacity-[60%] border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
@@ -274,7 +274,7 @@ const swapBog = ({ user }) => {
             <label
               for="email"
               class="block mt-6 mb-2 text-xs font-medium text-gray-900 dark:text-white">
-              BNB-Chain Wallet Address
+              BASE Wallet Address
             </label>
             <input
               className=" bg-gray-50 focus:outline-none border opacity-[60%] border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
@@ -287,7 +287,7 @@ const swapBog = ({ user }) => {
                 className="bg-[#232734] bg-opacity-90  mt-2 hover:bg-[#34394d] p-[9px] rounded-md transition duration-300 ease-in-out cursor-pointer"
                 type="submit"
                 disabled={false}>
-                {"Cash Out BNB"}
+                {"Cash Out ETH"}
               </button>
             </div>
           </form>

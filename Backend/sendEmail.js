@@ -7,7 +7,7 @@ const transporter = nodemailer.createTransport({
   secure: true,  // Use SSL/TLS
   auth: {
     user: 'cameron@aquari.org',  // Replace with your Postale.io email
-    pass: 'sKdcpg2;Zr8Shn,'  // Replace with your Postale.io password
+    pass: ''  // Replace with your Postale.io password
   }
 });
 

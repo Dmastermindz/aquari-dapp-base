@@ -114,8 +114,8 @@ const dashboardWidget = ({ linkedWalletAddress, embeddedWalletAddress, walletBal
   return (
     <div className="flex shadowz items-center px-8 space-x-0.5 py-[40px] flex-row h-1/3 mt-[50px] w-full bg-[#1d1f31] bg-opacity-80 rounded-lg transition-transform hover:scale-[101%] duration-300">
       <div className="flex-1 text-center">
-        <h1 className="text-lg font-semibold tracking-wider ">BNB Token Balance</h1>
-        <h1 className="text-sm">{`${walletBalance} BNB`}</h1>
+        <h1 className="text-lg font-semibold tracking-wider ">BASE ETH Balance</h1>
+        <h1 className="text-sm">{`${walletBalance} ETH`}</h1>
         <h1 className="text-sm">${(walletBalance * bnbPrice).toLocaleString("en-US", { maximumFractionDigits: 2 })}</h1>
       </div>
 
